@@ -1,6 +1,6 @@
 class Fib{
 
-    iteration(n){
+    iterationFib(n){
         // Pseudocode
         // create a variable called arrayFib that will store the fibannoci sequences. The array set as empty array
         // create two varibles called fib_zero = fib(0) and fib_one = fib(1) => fib_zero = 0 and fib_one = 1
@@ -17,27 +17,31 @@ class Fib{
         let fib_zero = 0
         let fib_one = 1
 
-        // push the varibale fib_zero and fib_one to the array
         arrayFib.push(fib_zero,fib_one)
 
-        for(let i = 2; i < n; i++){
+        for(let i = 2; i <= n; i++){
+
             let productFib = fib_zero + fib_one 
             arrayFib.push(productFib)
-            // console.log(productFib)
-            
+
             // swap the variables
             fib_zero = fib_one
             fib_one = productFib
         }
 
-        console.log(arrayFib)
-        return arrayFib
+        if(n === 0) return [fib_zero]
+        if(n === 1) return [fib_zero,fib_one]
+        if(n >= 2) return arrayFib
+
     }
 
-    recursive(){
+    recursiveFib(n){
 
     }
 }
 
+
 const calculateFib = new Fib()
-calculateFib.iteration(1000)
+console.log(calculateFib.iterationFib(4))
+
+
