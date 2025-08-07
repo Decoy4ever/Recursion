@@ -37,11 +37,50 @@ class Fib{
 
     recursiveFib(n){
 
+        if(n <= 0) return 0
+        if(n === 1) return 1
+        return this.recursiveFib(n - 1) + this.recursiveFib(n - 2)
+     
     }
+
+    createArr(n){
+        let arrayFib = [0,1]
+
+        if(n <= 0) return [0]
+        if(n === 1) return arrayFib
+
+        for(let i = 2; i <= n; i++){
+            let value = this.recursiveFib(i)
+            arrayFib.push(value)
+        }
+
+        return arrayFib
+    }
+
 }
 
 
 const calculateFib = new Fib()
-console.log(calculateFib.iterationFib(4))
+// console.log(calculateFib.iterationFib(4))
+console.log(calculateFib.createArr(0))
+console.log(calculateFib.createArr(1))
+console.log(calculateFib.createArr(3))
+console.log(calculateFib.createArr(5))
+console.log(calculateFib.createArr(8))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
