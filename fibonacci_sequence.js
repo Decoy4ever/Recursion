@@ -1,17 +1,6 @@
 class Fib{
 
     iterationFib(n){
-        // Pseudocode
-        // create a variable called arrayFib that will store the fibannoci sequences. The array set as empty array
-        // create two varibles called fib_zero = fib(0) and fib_one = fib(1) => fib_zero = 0 and fib_one = 1
-        // Use a for..loop. start i = 2, condition : i < n, increment : i+1 
-        //  create a varibale called productFib. productFib = fib_zero + fib_one 
-        //  push the productFib onto the arrayFib
-        //  now set the variable fib_zero = fib_one
-        //  now set the variable fib_one = productFib
-        //  continue to calulcate productFib and push onto arrayFib until it fails condition
-        // exit loop
-        // return the array
 
         const arrayFib = []
         let fib_zero = 0
