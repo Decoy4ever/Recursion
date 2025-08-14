@@ -23,55 +23,65 @@ class SortingAlgo{
         let j = 0
 
         let result = []
-        const firstArrLen = firstArr.length
-        const secondArrLen = secondArr.length
+        let firstArrLen = firstArr.length
+        let secondArrLen = secondArr.length
 
         while(i < firstArrLen && j < secondArrLen){
             // console.log(firstArr[i], secondArr[i])
             if(firstArr[i] < secondArr[j]){
-                result.push(firstArr.shift())
-                console.log(`Current firstArr: ${firstArr}`)
-                console.log(result)
+                result.push(firstArr[i])
                 i++
-            }
-            else{
-                result.push(secondArr.shift())
-                console.log(`Current secondArr: ${secondArr}`)
-                console.log(result)
+                console.log(`Sorted: ${result}`)
+                console.log(`Current firstArr: ${firstArr}`)
+            }else{
+                result.push(secondArr[j])
                 j++
+                console.log(`Current secondArr: ${secondArr}`)
+                console.log(`Sorted: ${result}`)
             }
         }
+
 
         console.log(`Remaining elements in firstArr: \n ${firstArr}`)
         console.log(`Remaining elements in secondArr: \n ${secondArr}`)
 
+        // return result.concat(firstArr.slice().concat(secondArr.slice()));
 
         // add remaining elements in firstArr or secondArr
-        for(; i < firstArrLen; i++){
-            result.push(firstArr.shift())
+       while(i < firstArrLen){
+            result.push(firstArr[i])
+            i++
         }
 
-        for(; j < secondArrLen; j++){
-            result.push(secondArr.shift())
+        while(j < secondArrLen){
+            result.push(secondArr[j])
+            j++
         }
-        
-        // return result
-        console.log("Final Array joined")
+
         console.log(result)
-
+        return result
     }
 
-    mergeSort(array){
+    // mergeSort(unsortedArr){
         
+    //     // base case
+    //     // length of the array is 1 return the array
+    //     if(unsortedArr.length === 1) return unsortedArr 
+    //     console.log(unsortedArr)
 
+    //     // split the unsorted arr into two halves
+    //     let midpoint = Math.floor(unsortedArr.length / 2)
+    //     let leftArr = unsortedArr.slice(0,midpoint)
+    //     let rightArr = unsortedArr.slice(midpoint)
 
-  
-    }
+    //     let mergedArr = this.merge(leftArr,rightArr)
+    //     console.log(`The final sorted Array is ${mergedArr}`)
+    // }
 }
 
 const mergeAlgo = new SortingAlgo()
-mergeAlgo.merge([1,5,7,9,10],[4,5,6,8])
+mergeAlgo.merge([1,37,9,2],[4,4,41,8])
 
-// console.log(mergeAlgo.mergeSort([1],[]))
-// console.log(mergeAlgo.mergeSort([],[3]))
+// console.log(mergeAlgo.mergeSort([100]))
+// console.log(mergeAlgo.mergeSort([1,7,4,9]))
 
