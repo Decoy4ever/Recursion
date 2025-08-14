@@ -1,6 +1,6 @@
 class SortingAlgo{
 
-    mergeSort(firstArr, secondArr, firstArrLen, secondArrLen){
+    merge(firstArr, secondArr, firstArrLen, secondArrLen){
         // create varibales i,j,k
         //  -> i point to the index of firstArr
         //  -> j point to the index of secondArr
@@ -19,8 +19,47 @@ class SortingAlgo{
         // exit out while loop
         // return resultArr
 
+        let i = 0
+        let j = 0
+        let k = 0
+
+        let result = []
+        firstArrLen = firstArr.length
+        secondArrLen = secondArr.length
+
+        while(i < firstArrLen && j < secondArrLen){
+            // console.log(firstArr[i], secondArr[i])
+            if(firstArr[i] < secondArr[j]){
+                result.push(firstArr.shift())
+                console.log(`Current firstArr: ${firstArr}`)
+                console.log(result)
+                i++
+            }
+            else{
+                result.push(secondArr.shift())
+                console.log(`Current secondArr: ${secondArr}`)
+                console.log(result)
+                j++
+            }
+        }
+
+        console.log(`Remaining elements in firstArr: \n ${firstArr}`)
+        console.log(`Remaining elements in secondArr: \n ${secondArr}`)
 
 
+        // add remaining elements in firstArr or secondArr
+        for(; i < firstArrLen; i++){
+            result.push(firstArr.shift())
+            k++
+        }
+
+        for(; j < secondArrLen; j++){
+            result.push(secondArr.shift())
+            k++
+        }
+        // return result
+        console.log("Final Array joined")
+        console.log(result)
 
     }
 
@@ -30,4 +69,4 @@ class SortingAlgo{
 }
 
 const mergeAlgo = new SortingAlgo()
-mergeAlgo.mergeSort([3, 2, 1, 13, 8, 5, 0, 1])
+mergeAlgo.merge([1,5,7,9,10],[4,5,6,8])
