@@ -18,7 +18,7 @@ class SortingAlgo{
             }
         }
 
-        // add remaining elements in firstArr or secondArr
+        // add any remaining elements in firstArr or secondArr to resultArr
        while(i < firstArrLen){
             result.push(firstArr[i])
             i++
@@ -29,14 +29,12 @@ class SortingAlgo{
             j++
         }
 
-        // console.log(result)
         return result
     }
 
     mergeSort(unsortedArr){
         
         // base case
-        // length of the array is 1 return the array
         if(unsortedArr.length === 1) return unsortedArr 
 
         // split the unsorted arr into two halves for calculation of merging
@@ -56,8 +54,7 @@ class SortingAlgo{
 
 const mergeAlgo = new SortingAlgo()
 // mergeAlgo.merge([1,37,9,2],[4,4,41,8])
-
-// console.log(mergeAlgo.mergeSort([100]))
+console.log(mergeAlgo.mergeSort([100]))
 console.log(mergeAlgo.mergeSort([100,3,1,5]))
 console.log(mergeAlgo.mergeSort([100,3,1,5,93,189,-4]))
 console.log(mergeAlgo.mergeSort([100,3,1,5,-93.56,100,-4]))
